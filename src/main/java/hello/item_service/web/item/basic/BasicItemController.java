@@ -6,7 +6,13 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.*;
+=======
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+>>>>>>> origin/master
 
 import java.util.List;
 
@@ -15,14 +21,20 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BasicItemController {
     private final ItemRepository itemRepository;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     @GetMapping
     public String items(Model model) {
         List<Item> items = itemRepository.findAll();
         model.addAttribute("items", items);
         return "basic/items";
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     /**
      * 테스트용 데이터 추가
      */
@@ -31,18 +43,25 @@ public class BasicItemController {
         itemRepository.save(new Item("testA", 10000, 10));
         itemRepository.save(new Item("testB", 20000, 20));
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     @GetMapping("/{itemId}")
     public String item(@PathVariable Long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
         return "basic/item";
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     @GetMapping("/add")
     public String addForm() {
         return "basic/addForm";
     }
+<<<<<<< HEAD
 
     @PostMapping("/add")
     public String addItemV1(@RequestParam String itemName,
@@ -96,4 +115,6 @@ public class BasicItemController {
         model.addAttribute("item", item);
         return "basic/editForm";
     }
+=======
+>>>>>>> origin/master
 }
